@@ -8,11 +8,41 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/5ed27ce724.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <nav>
+      <div class="logo">
+        <i>F</i>
+      </div>
+      <div class="nav-btns">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-plus-circle"></i>
+        <i class="fas fa-user-circle"></i>
+      </div>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%# if route not home or post index or post show %>
+    <% if false %>
+      <%= yield %>
+    <% else %>
+      <div class="content-wrapper">
+        <div class="left-nav">
+          <ul>
+            <li><i class="fas fa-home"></i><em>Home</em></li>
+            <li><i class="fas fa-handshake"></i><em>Find Friends</em></li>
+          </ul>
+        </div>
+        <div class="yielded-content">
+          <%= yield %>
+        </div>
+        <div class="friends">
+      
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>

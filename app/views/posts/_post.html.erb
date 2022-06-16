@@ -1,7 +1,11 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Content:</strong>
+<div id="<%= dom_id post %>" class="post">
+  <div class="post-user"><i class="fas fa-user-circle"></i><%= post.user.email %></div>
+  <div class="post-content">
     <%= post.content %>
-  </p>
+  </div>
+  <div class="post-btns">
+    <div class="likes"><div class="like-count">0</div><i class="far fa-heart"></i></div>
+    <i class="far fa-comments"></i>
+  </div>
 
 </div>
