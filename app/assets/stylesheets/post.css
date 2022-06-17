@@ -3,7 +3,21 @@
   border-radius: 10px;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
   padding: 25px;
-  width: 100%;
+  width: auto;
+}
+
+.post a{
+  text-decoration: none;
+  color: black;
+}
+
+.post a i{
+  color: #5555;
+}
+
+.post-header{
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-user{
@@ -18,6 +32,10 @@
   color: #5555;
   font-size: 40px;
   margin-right: 10px;
+}
+
+.post-settings{
+  color: #5555;
 }
 
 .post-content{
@@ -42,4 +60,38 @@
 .like-count{
   color: black;
   font-size: 20px;
+}
+
+.dropdown{
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dropdown-items{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown-items button{
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+}
+
+.dropdown-items button:hover{
+  cursor: pointer;
+}
+
+.dropdown-items a i{
+  color: rgb(53, 53, 53);
+}
+
+.dropdown-items button i {
+  color: rgb(53, 53, 53);
 }
