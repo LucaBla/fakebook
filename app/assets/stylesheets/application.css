@@ -26,6 +26,9 @@ nav{
   justify-content: space-between;
   padding: 5px 30px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
 }
 
 nav a{
@@ -117,19 +120,23 @@ nav .dropdown{
 }
 
 .content-wrapper{
+  width: auto;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 27vw 45vw 27vw;
   align-items: flex-start;
   justify-items: center;
-  column-gap: 50px;
+  column-gap: 0px;
   margin-top: 40px;
 }
 
 .left-nav{
   font-size: 20px;
   color: #505050;
-  top: 0px;
-  position: relative;
+  top: 100px;
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .left-nav ul {
@@ -170,7 +177,10 @@ nav .dropdown{
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
+  padding-right: 40px;
+  position: sticky;
+  top: 100px;
 }
 
 .friends h3{

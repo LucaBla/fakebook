@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
   resources :likes
+  resources :comments
+
   devise_for :users
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

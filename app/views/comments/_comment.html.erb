@@ -1,0 +1,14 @@
+<div id="<%= dom_id comment %>" class="comment">
+  <div class="comment-options">
+    <i class="fas fa-ellipsis-h"></i>
+  </div>
+  <div class="comment-content">
+    <p><%= comment.content %></p>
+  </div>
+  <div class="comment-user">
+    <%= comment.user.email %>
+  </div>
+</div>
+<div class="comment-corner">
+</div>
+<i class="fas fa-user-circle comment-user-pic"></i>

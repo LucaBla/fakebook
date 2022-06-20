@@ -1,4 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<div class="post-wrapper">
+  <%= render @post %>
+</div>
+<div class="comments">
+  <% @post.comments.order(created_at: :desc).each do |comment| %>
+    <%= render comment %>
+  <% end %>
+</div>
+<div class="new-comment">
+  <%= render 'comments/form', comment: @new_comment, post: @post %>
+</div>
+<div class="placeholder">
+</div>
 
-<%= render @post %>
 
