@@ -141,6 +141,11 @@ nav .dropdown{
   align-items: center;
 }
 
+.left-nav ul li a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .left-nav ul li:not(:last-child) { 
   margin-bottom: 30px;  
 }

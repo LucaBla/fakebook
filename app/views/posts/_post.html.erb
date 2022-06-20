@@ -30,7 +30,21 @@
     </div>
   <% end %>
       <div class="post-btns">
-        <div class="likes"><div class="like-count">0</div><i class="far fa-heart"></i></div>
+        <div class="likes">
+          <div class="like-count">
+            <%= post.likes.count%>
+          </div>
+          <% if Like.find_by( post_id: post.id, user_id: current_user.id) != nil %>
+            <%= button_to Like.find_by( post_id: post.id, user_id: current_user.id), 
+                          controller:'likes', method: :delete do%>
+              <i class="fas fa-heart"></i>
+            <%end%>
+          <%else%>
+            <%= button_to action: 'create', controller:'likes', post_id: post.id do%>
+              <i class="far fa-heart"></i>
+            <%end%>
+          <%end%>
+        </div>
         <% if request.fullpath === '/' || request.fullpath === '/posts' %>
           <%= link_to post do%>
             <i class="far fa-comments"></i>

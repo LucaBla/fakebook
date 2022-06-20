@@ -42,14 +42,24 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if false %>
-      <%= yield %>
+    <% if request.fullpath != '/' && request.fullpath != '/posts' && !request.fullpath.start_with?('/posts/') %>
+      <div class="yielded-content">
+        <%= yield %>
+      </div>
     <% else %>
       <div class="content-wrapper">
         <div class="left-nav">
           <ul>
-            <li><i class="fas fa-home"></i><em>Home</em></li>
-            <li><i class="fas fa-handshake"></i><em>Find Friends</em></li>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fas fa-home"></i><em>Home</em>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <i class="fas fa-handshake"></i><em>Find Friends</em>
+              <% end %>
+            </li>
           </ul>
         </div>
         <div class="yielded-content">
@@ -59,7 +69,9 @@
           <div class="your-friends">
             <h3><i class="fas fa-user-friends"></i>Your Friends</h3>
             <div class="friendlist">
-              <i class="fas fa-user-circle"></i>Max Musterman
+              <% current_user.friends.each do |friend|%>
+                <p><i class="fas fa-user-circle"></i> <%= friend.email %></p>
+              <% end %>
             </div>
           </div>
         </div>

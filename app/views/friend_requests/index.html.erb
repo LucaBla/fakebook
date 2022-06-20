@@ -1,4 +1,12 @@
-<h1>Hallo</h1>
+<h1>Your Requests</h1>
 <% @friend_requests.each do |fr|%>
-  <%= fr.sender.email %>
+  <p><%= fr.sender.email %></p>
+  <p>
+    <%= button_to action: 'accept', controller: 'friend_requests', id: fr.id do%>
+      <i class="fas fa-check"></i>
+    <% end %>
+    <%= button_to action: 'destroy', controller: 'friend_requests', id: fr.id do%>
+      <i class="fas fa-times"></i>
+    <% end %>
+  </p>
 <% end %>
