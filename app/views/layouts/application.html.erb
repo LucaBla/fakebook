@@ -70,7 +70,11 @@
             <h3><i class="fas fa-user-friends"></i>Your Friends</h3>
             <div class="friendlist">
               <% current_user.friends.each do |friend|%>
-                <p><i class="fas fa-user-circle"></i> <%= friend.email %></p>
+                <p>
+                  <%= link_to user_path(friend) do %>
+                    <i class="fas fa-user-circle"></i> <%= friend.username %>
+                  <%end%>
+                </p>
               <% end %>
             </div>
           </div>

@@ -1,55 +1,52 @@
-<div id="<%= dom_id post %>" class="post">
-  <% if request.fullpath === '/' || request.fullpath === '/posts'  %>
-    <%= link_to post do%>
-      <div class="post-user"><i class="fas fa-user-circle"></i><%= post.user.email %></div>
-      <div class="post-content">
-        <%= post.content %>
-      </div>
-    <% end %>
-  <% else %>
+<turbo-frame id='<%= dom_id post %>'>
+  <div id="<%= dom_id post %>" class="post">
     <div class="post-header">
-      <div class="post-user"><i class="fas fa-user-circle"></i><%= post.user.email %></div>
-      <div class="post-settings" data-controller="post">
-        <i class="fas fa-ellipsis-h" data-action='click->post#show'></i>
-        <div class="dropdown hidden" data-post-target='dropDown'>
-          <div class="dropdown-items">
-            <%= link_to edit_post_path(@post) do%>
-              <i class="fas fa-pen"></i>
-              <em>Edit Post</em>
-            <% end %>
-            <%= button_to @post, method: :delete do %>
-              <i class="fas fa-trash"></i>
-              <em>Delete Post</em>
-            <% end%>
+      <%= link_to user_path(post.user), data: {'turbo-frame': '_top'} do%>
+        <div class="post-user"><i class="fas fa-user-circle"></i><%= post.user.username %></div>
+      <%end%>
+      <% if current_user == post.user%>
+        <div class="post-settings" data-controller="post">
+          <i class="fas fa-ellipsis-h" data-action='click->post#show'></i>
+          <div class="dropdown hidden" data-post-target='dropDown'>
+            <div class="dropdown-items">
+              <%= link_to edit_post_path(post), data: {'turbo-frame': '_top'} do%>
+                <i class="fas fa-pen"></i>
+                <em>Edit Post</em>
+              <% end %>
+              <%= button_to post, method: :delete, data: {'turbo-frame': '_top'} do %>
+                <i class="fas fa-trash"></i>
+                <em>Delete Post</em>
+              <% end%>
+            </div>
           </div>
         </div>
-      </div>
+      <%end%>
     </div>
     <div class="post-content">
       <%= post.content %>
     </div>
-  <% end %>
-      <div class="post-btns">
-        <div class="likes">
-          <div class="like-count">
-            <%= post.likes.count%>
-          </div>
-          <% if Like.find_by( post_id: post.id, user_id: current_user.id) != nil %>
-            <%= button_to Like.find_by( post_id: post.id, user_id: current_user.id), 
-                          controller:'likes', method: :delete do%>
-              <i class="fas fa-heart"></i>
-            <%end%>
-          <%else%>
-            <%= button_to action: 'create', controller:'likes', post_id: post.id do%>
-              <i class="far fa-heart"></i>
-            <%end%>
-          <%end%>
+    <div class="post-btns">
+      <div class="likes">
+        <div class="like-count">
+          <%= post.likes.count%>
         </div>
-        <% if request.fullpath === '/' || request.fullpath === '/posts' %>
-          <%= link_to post do%>
-            <i class="far fa-comments"></i>
-          <% end %>
-        <% end %>
+        <% if Like.find_by( post_id: post.id, user_id: current_user.id) != nil %>
+          <%= button_to Like.find_by( post_id: post.id, user_id: current_user.id), 
+                        controller:'likes', method: :delete do%>
+            <i class="fas fa-heart"></i>
+          <%end%>
+        <%else%>
+          <%= button_to action: 'create', controller:'likes', post_id: post.id do%>
+            <i class="far fa-heart"></i>
+          <%end%>
+        <%end%>
       </div>
+      <%#<% if request.fullpath === '/' || request.fullpath === '/posts' || request.fullpath.start_with?('/users/') %>
+        <%= link_to post, data: {'turbo-frame': '_top'} do%>
+          <i class="far fa-comments"></i>
+        <% end %>
+      <%#<% end %>
+    </div>
 
-</div>
+  </div>
+</turbo-frame>

@@ -1,0 +1,76 @@
+.banner{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 250px;
+  min-height: 250px;
+  width: 100%;
+  background-color: white;
+  margin-top: -20px;
+  margin-bottom: 100px;
+}
+
+.banner button{
+  background-color: #4267B2;
+  margin: 20px;
+  margin-right: 80px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.banner button:hover{
+  cursor: pointer;
+}
+
+.user-name-and-pic{
+  display: flex;
+  position: absolute;
+  top: 200px;
+  left: 80px;
+  align-items: center;
+  color: black;
+  
+}
+
+.user-name-and-pic i{
+  font-size: 150px;
+  color: #555;
+  margin-right: 15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.user-profile-content{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 27vw 45vw 27vw;
+}
+
+.bio{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-content{
+  background-color: white;
+  min-height: 50vh;
+  height: 50vh;
+  width: 70%;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.user-profile-friends{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-profile-friends-list{
+  width: 70%;
+}

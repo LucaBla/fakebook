@@ -1,7 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
+  <% if !@posts.empty? %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  <%else%>
+    Add some Friends to see there posts!
+  <%end%>
 </div>

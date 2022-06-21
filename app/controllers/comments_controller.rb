@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
+        format.turbo_stream
         format.html { redirect_to post_path(@comment.post_id), notice: "Comment was successfully created." }
         format.json { render :show, status: :created, location: @comment }
       else

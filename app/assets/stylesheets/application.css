@@ -183,6 +183,11 @@ nav .dropdown{
   top: 100px;
 }
 
+.friends a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .friends h3{
   font-size: 20px;
   font-style: normal;

@@ -1,0 +1,35 @@
+<div class="banner">
+  <%= button_to action: 'create', controller: 'friend_requests', receiver_id: @user.id do%>
+    Send Friend Request
+  <% end %>
+</div>
+
+<div class="user-name-and-pic">
+  <i class="fas fa-user-circle"></i>
+<h1 class="username-header"><%= @user.username%></h1>
+</div>
+
+<div class="user-profile-content">
+  <div class="bio">
+    <div class="bio-content">
+
+    </div>
+  </div>
+  <div class="user-profile-posts">
+    <div class="posts">
+      <% @user.posts.order(created_at: :desc).each do |post|%>
+        <%= render post %>
+      <%end%>
+    </div>
+  </div>
+
+  <div class="user-profile-friends">
+    <div class="user-profile-friends-list">
+      <% @user.friends.each do |friend|%>
+        <%= link_to user_path(friend) do%>
+         <%= render friend %>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>
