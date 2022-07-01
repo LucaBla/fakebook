@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :likes
   resources :comments
+  resources :bios
 
   devise_for :users
   resources :users

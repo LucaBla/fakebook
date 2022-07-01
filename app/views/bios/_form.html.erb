@@ -1,0 +1,22 @@
+<%= form_with(model: bio) do |form| %>
+  <% if bio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bio.errors.count, "error") %> prohibited this bio from being saved:</h2>
+
+      <ul>
+        <% bio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="check-wrapper">
+    <%= form.button nil do%>
+      <i class="fas fa-check"></i>
+    <%end%>
+  </div>
+  <div class="field">
+    <%= form.text_area :content %>
+  </div>
+
+<% end %>

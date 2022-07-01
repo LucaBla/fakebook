@@ -1,0 +1,29 @@
+.user-partial{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  background-color: yellow;
+  overflow: hidden;
+}
+
+.user-partial .profile-pic-wrapper{
+  background-color: green;
+  height: 150px;
+  width: 100%;
+}
+
+.user-partial .user-info{
+  background-color: white;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.user-partial .user-info p{
+  margin: 0px;
+  padding: 10px;
+  justify-self: center;
+}

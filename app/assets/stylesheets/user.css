@@ -50,27 +50,104 @@
   grid-template-columns: 27vw 45vw 27vw;
 }
 
+.bio-header{
+  margin-left: 4vw;
+}
+
+.friends-header{
+  margin-left: 4vw;
+}
+
 .bio{
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-align:left;
+  align-items: center;
 }
 
 .bio-content{
+  
   background-color: white;
   min-height: 50vh;
   height: 50vh;
   width: 70%;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  padding: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.bio-content p{
+  margin: 0px;
+  word-wrap: break-word;
+}
+
+.bio-content form{
+  height: 100%;
+}
+
+.check-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bio-content form button{
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  color: #5555;
+  font-size: 16px;
+}
+
+.bio-content form button:hover{
+  cursor: pointer;
+}
+
+.bio-content .field{
+  height: 90%;
+}
+
+.bio-content textarea{
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 0px;
+}
+
+.bio-settings{
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  color: #5555;
+}
+
+.bio-settings i{
+  color: #5555;
 }
 
 .user-profile-friends{
   display: flex;
   justify-content: center;
   width: 100%;
+  height: fit-content;
 }
 
 .user-profile-friends-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 160px) );
+  gap: 10px;
   width: 70%;
+}
+
+.user-profile-friends-list a{
+  height: fit-content;
+  text-decoration: none;
+  color: black;
 }

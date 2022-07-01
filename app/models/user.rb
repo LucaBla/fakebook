@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes
+  has_one :bio
 
   has_many :sended_requests, class_name: 'FriendRequest', foreign_key: 'sender_id', inverse_of: :sender
   has_many :received_requests, class_name: 'FriendRequest', foreign_key: 'receiver_id', inverse_of: :receiver
@@ -16,4 +17,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_commit :add_bio, on: [:create]
+
+  private
+
+  def add_bio
+    self.bio = Bio.create()
+  end
 end

@@ -10,11 +10,23 @@
 </div>
 
 <div class="user-profile-content">
-  <div class="bio">
-    <div class="bio-content">
-
+    <h2 class="bio-header">Bio</h2>
+    <h2>Posts</h2>
+    <h2 class="friends-header">Friends</h2>
+  <%= turbo_frame_tag 'bio' do%>
+    <div class="bio">
+      <div class="bio-content">
+        <% if @user === current_user %>
+          <div class="bio-settings">
+          <%= link_to edit_bio_path(current_user) do%>
+            <i class="fas fa-pen"></i>
+          <%end%>
+          </div>
+        <% end %>
+        <%= simple_format(@user.bio.content) %>
+      </div>
     </div>
-  </div>
+  <%end%>
   <div class="user-profile-posts">
     <div class="posts">
       <% @user.posts.order(created_at: :desc).each do |post|%>

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag 'bio' do%>
+  <div class="bio">
+        <div class="bio-content">
+            <div class="bio-settings">
+            </div>
+          <%= render "form", bio: @bio %>
+        </div>
+      </div>
+<%end%>
