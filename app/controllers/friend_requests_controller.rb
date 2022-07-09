@@ -7,7 +7,7 @@ class FriendRequestsController < ApplicationController
     @friend_request = current_user.sended_requests.build(fr_params)
     respond_to do |format|
       if @friend_request.save
-        format.html { redirect_to users_path, notice: "FriendRequest was successfully send." }
+        format.html { redirect_back fallback_location: root_path, notice: "FriendRequest was successfully send." }
         format.json { render :show, status: :created, location: @friend_request }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,6 +44,7 @@ class FriendRequestsController < ApplicationController
   end
 
   private
+
   def fr_params
     params.permit(:receiver_id, :id)
   end

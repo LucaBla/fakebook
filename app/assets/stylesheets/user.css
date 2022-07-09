@@ -42,6 +42,15 @@
   margin-right: 15px;
   background-color: white;
   border-radius: 50%;
+  border: 6px solid #555;
+}
+
+.user-name-and-pic img{
+  border-radius: 40%;
+  margin-right: 15px;
+  height: 160px;
+  width: 160px;
+  border: 6px solid #EBEBEB;
 }
 
 .user-profile-content{

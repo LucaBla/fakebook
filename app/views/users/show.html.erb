@@ -5,7 +5,11 @@
 </div>
 
 <div class="user-name-and-pic">
-  <i class="fas fa-user-circle"></i>
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image %>
+  <% else %>
+    <i class="fas fa-user-circle"></i>
+  <% end %>
 <h1 class="username-header"><%= @user.username%></h1>
 </div>
 

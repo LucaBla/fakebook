@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :likes
   has_one :bio
 
+  has_one_attached :image, dependent: :destroy
+
   has_many :sended_requests, class_name: 'FriendRequest', foreign_key: 'sender_id', inverse_of: :sender
   has_many :received_requests, class_name: 'FriendRequest', foreign_key: 'receiver_id', inverse_of: :receiver
 

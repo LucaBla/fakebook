@@ -30,7 +30,14 @@
 
 .post-user i{
   color: #5555;
-  font-size: 40px;
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+.post-user img{
+  border-radius: 40%;
+  height: 48px;
+  width: 48px;
   margin-right: 10px;
 }
 

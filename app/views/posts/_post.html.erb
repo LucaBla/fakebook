@@ -2,7 +2,14 @@
   <div id="<%= dom_id post %>" class="post">
     <div class="post-header">
       <%= link_to user_path(post.user), data: {'turbo-frame': '_top'} do%>
-        <div class="post-user"><i class="fas fa-user-circle"></i><%= post.user.username %></div>
+        <div class="post-user">
+          <% if post.user.image.attached? %>
+            <%= image_tag post.user.image%>
+            <% else %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
+          <%= post.user.username %>
+        </div>
       <%end%>
       <% if current_user == post.user%>
         <div class="post-settings" data-controller="post">
