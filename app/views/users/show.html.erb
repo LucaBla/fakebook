@@ -22,7 +22,7 @@
       <div class="bio-content">
         <% if @user === current_user %>
           <div class="bio-settings">
-          <%= link_to edit_bio_path(current_user) do%>
+          <%= link_to edit_bio_path(current_user.bio) do%>
             <i class="fas fa-pen"></i>
           <%end%>
           </div>

@@ -58,6 +58,12 @@
   left: 10px;
 }
 
+.comment-img{
+  border-radius: 40%;
+  width: 48px;
+  height: 48px;
+}
+
 .new-comment{
   display: flex;
   flex-direction: column;
@@ -104,6 +110,12 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+}
+
+.submit-and-user img{
+  border-radius: 40%;
+  height: 48px;
+  width: 48px;
 }
 
 .submit-and-user button{

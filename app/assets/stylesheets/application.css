@@ -96,7 +96,24 @@ nav .nav-btns a .fa-envelope{
   border-radius: 50px;
 }
 
+nav .user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav img{
+  width: 48px;
+  height: 48px;
+  border-radius: 40%;
+}
+
+nav img:hover{
+  cursor: pointer;
+}
+
 nav .dropdown{
+  bottom: -80px;
   right: 20px;
 }
 
@@ -184,6 +201,8 @@ nav .dropdown{
 }
 
 .friends a{
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: inherit;
 }
@@ -195,5 +214,12 @@ nav .dropdown{
 }
 
 .friends i{
+  margin-right: 10px;
+}
+
+.friends img{
+  border-radius: 40%;
+  width: 32px;
+  height: 32px;
   margin-right: 10px;
 }

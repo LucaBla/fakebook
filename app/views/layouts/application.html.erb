@@ -27,7 +27,8 @@
             <i class="fas fa-plus-circle"></i>
           <% end %>
           <div class="user">
-            <i class="fas fa-user-circle" data-action="click->application#show"></i>
+            <%= image_tag current_user.image, data: {action:'click->application#show'} %>
+            <%#<i class="fas fa-user-circle" data-action="click->application#show"></i> #%>
             <div class="dropdown hidden" data-application-target='dropDown'>
               <%= button_to destroy_user_session_path, method: :delete do %>
                 <div class="logout">
@@ -73,7 +74,12 @@
               <% current_user.friends.each do |friend|%>
                 <p>
                   <%= link_to user_path(friend) do %>
-                    <i class="fas fa-user-circle"></i> <%= friend.username %>
+                    <% if friend.image.attached? %>
+                      <%= image_tag friend.image %>
+                    <%else%>
+                      <i class="fas fa-user-circle"></i>
+                    <% end %>
+                    <span><%= friend.username %></span>
                   <%end%>
                 </p>
               <% end %>

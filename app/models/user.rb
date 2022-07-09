@@ -20,11 +20,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_commit :add_bio, on: [:create]
+  after_commit :add_image, :add_bio, on: [:create]
+  #after_commit :add_image, on: [:create]
 
   private
 
   def add_bio
-    self.bio = Bio.create()
+    self.bio = Bio.new(content: '')
+  end
+
+  def add_image
+    self.image.attach(io: File.open('app/assets/images/blank-user.png'), filename: 'blank-user.png')
   end
 end
