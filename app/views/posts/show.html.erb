@@ -1,5 +1,6 @@
 <p style="color: green"><%= notice %></p>
-<div class="post-wrapper">
+<div data-controller='scroll'>
+<div class="post-wrapper" data-scroll-target="newPost">
   <%= render @post %>
 </div>
 <div class="comments" id="comments">
@@ -12,5 +13,5 @@
 </div>
 <div class="placeholder">
 </div>
-
+</div>
 

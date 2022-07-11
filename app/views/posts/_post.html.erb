@@ -17,13 +17,15 @@
           <div class="dropdown hidden" data-post-target='dropDown'>
             <div class="dropdown-items">
               <%= link_to edit_post_path(post), data: {'turbo-frame': '_top'} do%>
-                <i class="fas fa-pen"></i>
-                <em>Edit Post</em>
+                <div>
+                  <i class="fas fa-pen"></i>
+                  <em>Edit Post</em>
+                </div>
               <% end %>
               <%= button_to post, method: :delete, data: {'turbo-frame': '_top'} do %>
                 <i class="fas fa-trash"></i>
                 <em>Delete Post</em>
-              <% end%>
+              <% end %>
             </div>
           </div>
         </div>

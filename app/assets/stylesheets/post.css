@@ -45,6 +45,10 @@
   color: #5555;
 }
 
+.post-settings i:hover{
+  cursor: pointer;
+}
+
 .post-content{
   margin: 15px 0px;
 }
@@ -95,7 +99,8 @@
 }
 
 .dropdown{
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
   position: absolute;
   border-radius: 10px;
   padding: 10px;
@@ -105,6 +110,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.dropdown-items a{
+  margin-bottom: 10px;
 }
 
 .dropdown-items button{

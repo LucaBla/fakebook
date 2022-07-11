@@ -25,7 +25,7 @@
     <div class="comment-corner"></div>
     <div class="submit-and-user">
       <%= image_tag current_user.image %>
-      <%= button_tag do %>
+      <%= button_tag data: {action: 'click->scroll#scroll'} do %>
         <i class="fas fa-paper-plane"></i>
       <%end%>
     </div>
