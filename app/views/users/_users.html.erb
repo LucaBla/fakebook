@@ -1,0 +1,7 @@
+<%= turbo_frame_tag 'users' do %>
+  <div class="users">
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </div>
+<%end%>

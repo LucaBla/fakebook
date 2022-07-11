@@ -1,15 +1,10 @@
 <div class="head">
   <h2>Find Friends</h2>
   <div class="search-form">
-    <%= form_tag "/users", method: 'GET' do %>
-      <%= label_tag :search_by_name %>
-      <%= text_field_tag :search_by_name, params[:search_by_name] %>
+    <%= form_tag "/users", method: 'GET', data: { controller: 'search' ,turbo_frame: 'users', turbo_action: 'advance' } do %>
+      <%= text_field_tag :search_by_name, params[:search_by_name], data: {action: 'input->search#search'} %>
       <%= submit_tag 'Search' %>
     <%end%>
   </div>
 </div>
-<div class="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-  <% end %>
-</div>
+<%= render 'users', users: @users %>

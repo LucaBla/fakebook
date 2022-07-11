@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     if params[:search_by_name] != '' && params.has_key?(:search_by_name)
       @users = @users.where("lower(username) LIKE ?", "%#{params[:search_by_name].downcase}%")
     end
+    if turbo_frame_request?
+      render partial: 'users', locals: { players: @players }
+    else
+      render 'index'
+    end
   end
 
   def show
