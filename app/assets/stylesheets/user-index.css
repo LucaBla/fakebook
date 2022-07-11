@@ -9,8 +9,30 @@
   margin: 0px;
 }
 
+.head button{
+  background-color: transparent;
+  border: none;
+  margin-right: -5px;
+}
+
+.head input[type=text]{
+  background-color: #5555;
+  border: none;
+  border-radius: 10px;
+  padding: 2px 5px;
+  font-size: 16px;
+}
+
+.head input[type=text]:focus{
+  outline: 0px solid rgba(0, 0, 0, 0.333);
+}
+
 .users{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
    margin: 20px 50px;
+}
+
+.users a{
+  color: black;
 }

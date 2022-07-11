@@ -1,12 +1,18 @@
-<h1>Your Requests</h1>
-<% @friend_requests.each do |fr|%>
-  <p><%= fr.sender.username %></p>
-  <p>
-    <%= button_to action: 'accept', controller: 'friend_requests', id: fr.id do%>
-      <i class="fas fa-check"></i>
-    <% end %>
-    <%= button_to action: 'destroy', controller: 'friend_requests', id: fr.id do%>
-      <i class="fas fa-times"></i>
-    <% end %>
-  </p>
-<% end %>
+<h2>Your Requests</h2>
+<div class="requests">
+  <% @friend_requests.each do |fr|%>
+    <div class="request">
+      <%= link_to user_path(fr.sender) do%>
+        <%= render fr.sender %>
+      <% end %>
+      <div class="buttons">
+        <%= button_to action: 'accept', controller: 'friend_requests', id: fr.id do%>
+          <i class="fas fa-check"></i>
+        <% end %>
+          <%= button_to action: 'destroy', controller: 'friend_requests', id: fr.id do%>
+        <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

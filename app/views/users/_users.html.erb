@@ -1,7 +1,9 @@
 <%= turbo_frame_tag 'users' do %>
   <div class="users">
     <% @users.each do |user| %>
-      <%= render user %>
+      <%= link_to user_path(user), target: '_top' do %>
+        <%= render user %>
+      <%end%>
     <% end %>
   </div>
 <%end%>

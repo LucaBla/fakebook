@@ -1,0 +1,73 @@
+h2 {
+  margin: 50px 50px 0px 50px;
+}
+
+.requests{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
+  margin: 20px 50px;
+}
+
+.request{
+  position: relative;
+  width: 170px;
+}
+
+.request:hover > .buttons{
+  opacity: 100%;
+}
+
+.request a{
+  color: black;
+}
+
+.request .buttons{
+  position: absolute;
+  top: 48%;
+  left: 0;
+  z-index: 10000000;
+  display: flex;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  opacity: 0%;
+}
+
+.request .buttons:hover{
+  opacity: 100%;
+}
+
+.request .buttons form button{
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.request .buttons form button:hover{
+  cursor: pointer;
+}
+
+.request .buttons form:first-child button{
+  background-color: rgb(2, 211, 2);
+}
+
+.request .buttons form:first-child button:hover{
+  background-color: rgb(3, 250, 3);
+}
+
+.request .buttons form:nth-child(2) button{
+  background-color: rgb(211, 2, 2);
+}
+
+.request .buttons form:nth-child(2) button:hover{
+  background-color: rgb(250, 3, 3);
+}
+
+.request i.fa-times {
+  width: 16px;
+  height: 16px;
+}
