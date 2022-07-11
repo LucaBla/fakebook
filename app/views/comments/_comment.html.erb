@@ -1,14 +1,29 @@
-<div id="<%= dom_id comment %>" class="comment">
-  <div class="comment-options">
-    <i class="fas fa-ellipsis-h"></i>
+<div id="<%= dom_id comment %>" class="comment-wrapper">
+  <div class="comment">
+    <div class="comment-options" data-controller='comment'>
+      <i class="fas fa-ellipsis-h" data-action='click->comment#show'></i>
+      <div class="dropdown hidden comment-dropdown" data-comment-target='dropDown'>
+        <p><%= comment.created_at.strftime('%H:%M') %></p>
+        <p><%= comment.created_at.strftime('%d.%m.%y') %></p>
+        <% if current_user == comment.user %>
+          <hr>
+          <%= button_to comment, method: :delete do %>
+            <i class="fas fa-trash"></i>
+            <em>Delete</em>
+          <% end %>
+        <%end%>
+      </div>
+    </div>
+    <div class="comment-content">
+      <p><%= simple_format(comment.content) %></p>
+    </div>
+    <div class="comment-user">
+      <%= comment.user.username %>
+    </div>
   </div>
-  <div class="comment-content">
-    <p><%= comment.content %></p>
+  <div class="comment-corner">
   </div>
-  <div class="comment-user">
-    <%= comment.user.username %>
-  </div>
+  <%= link_to user_path(comment.user)  do %>
+    <%= image_tag comment.user.image, class:"comment-img" %>
+  <%end%>
 </div>
-<div class="comment-corner">
-</div>
-<%= image_tag comment.user.image, class:"comment-img" %>

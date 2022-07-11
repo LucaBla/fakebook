@@ -28,8 +28,13 @@
           <% end %>
           <div class="user">
             <%= image_tag current_user.image, data: {action:'click->application#show'} %>
-            <%#<i class="fas fa-user-circle" data-action="click->application#show"></i> #%>
             <div class="dropdown hidden" data-application-target='dropDown'>
+              <%= link_to user_path(current_user) do %>
+                <div class="profile">
+                  <i class="fas fa-user"></i>
+                  <em>Profile</em>
+                </div>
+              <%end%>
               <%= button_to destroy_user_session_path, method: :delete do %>
                 <div class="logout">
                   <i class="fas fa-sign-out-alt" id='logout-icon'></i><em>Log Out</em>

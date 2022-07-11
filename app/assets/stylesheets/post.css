@@ -113,16 +113,21 @@
 }
 
 .dropdown-items a{
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .dropdown-items button{
   background-color: transparent;
+  color: red;
   border: none;
   text-align: left;
   margin: 0px;
   padding: 0px;
   font-size: 16px;
+}
+
+.dropdown-items form button i{
+  color: red;
 }
 
 .dropdown-items button:hover{

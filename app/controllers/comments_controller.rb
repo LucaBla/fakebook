@@ -17,6 +17,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy
+
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@comment) }
+      format.html { redirect_to post_path(@post), notice: "Comment was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def comment_params

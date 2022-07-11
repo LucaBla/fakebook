@@ -1,0 +1,9 @@
+.head h2{
+  margin: 50px 20px 0px 30px;
+}
+
+.users{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
+   margin: 20px 50px;
+}

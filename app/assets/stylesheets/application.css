@@ -18,6 +18,7 @@ body{
   margin: 0px;
   background-color: #EBEBEB;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
 }
 
 nav{
@@ -123,16 +124,34 @@ nav .dropdown{
   cursor: pointer;
 }
 
+.dropdown .profile{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  color: black;
+}
+
+.dropdown .profile i{
+  background-color: transparent;
+  color: rgb(53, 53, 53);
+  padding-left: 3px;
+}
+
 .dropdown .logout{
   display: flex;
   align-items: center;
   font-size: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
+}
+
+.dropdown button {
+  padding: 0px;
 }
 
 .dropdown form button #logout-icon{
   background-color: transparent;
-  color: black;
+  color: rgb(53, 53, 53);
   font-size: 20px;
 }
 

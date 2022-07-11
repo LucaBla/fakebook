@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
+    if params[:search_by_name] != '' && params.has_key?(:search_by_name)
+      @users = @users.where("lower(username) LIKE ?", "%#{params[:search_by_name].downcase}%")
+    end
   end
 
   def show
@@ -23,6 +27,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :username)
+    params.require(:user).permit(:image, :username, :search_by_name)
   end
 end
