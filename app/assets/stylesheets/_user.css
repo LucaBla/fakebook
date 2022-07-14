@@ -9,13 +9,15 @@
 }
 
 .user-partial .profile-pic-wrapper{
+  display: flex;
+  justify-content: center;
   width: 100%;
   position: relative;
   height: 170px;
 }
 
 .user-partial img{
-  width: 100%;
+  width: 160px;
   height: 120px;
 }
 

@@ -126,6 +126,10 @@ nav .dropdown{
   width: 120px;
 }
 
+.dropdown{
+   z-index: 100000000000000000000000000000000;
+}
+
 .dropdown form button{
   background-color: transparent;
   border: none;
