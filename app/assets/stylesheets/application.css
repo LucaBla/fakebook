@@ -103,6 +103,7 @@ nav .nav-btns a .fa-envelope{
 }
 
 nav .user{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,8 +120,10 @@ nav img:hover{
 }
 
 nav .dropdown{
-  bottom: -80px;
-  right: 20px;
+  position: absolute;
+  bottom: -150px;
+  right: 0px;
+  width: 120px;
 }
 
 .dropdown form button{
@@ -141,6 +144,20 @@ nav .dropdown{
   background-color: transparent;
   color: rgb(53, 53, 53);
   padding-left: 3px;
+}
+
+.dropdown .edit-profile{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  color: black;
+}
+
+.dropdown .edit-profile i{
+  background-color: transparent;
+  color: rgb(53, 53, 53);
+  padding-left: 6px;
 }
 
 .dropdown .logout{
