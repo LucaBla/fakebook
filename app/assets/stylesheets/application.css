@@ -243,6 +243,7 @@ nav .dropdown{
   padding-right: 40px;
   position: sticky;
   top: 100px;
+  z-index: 1;
 }
 
 .friends a{
