@@ -61,10 +61,14 @@
 
 .bio-header{
   margin-left: 4vw;
+  position: sticky;
+  top: 90px;
 }
 
 .friends-header{
   margin-left: 4vw;
+  position: sticky;
+  top: 90px;
 }
 
 .bio{
@@ -73,6 +77,8 @@
   flex-direction: column;
   text-align:left;
   align-items: center;
+  position: sticky;
+  top: 120px;
 }
 
 .bio-content{
@@ -144,7 +150,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: fit-content;
 }
 
 .user-profile-friends-list{
@@ -152,6 +157,10 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 160px) );
   gap: 10px;
   width: 70%;
+  height: 80vh;
+  overflow-y: scroll;
+  position: sticky;
+  top: 120px;
 }
 
 .user-profile-friends-list a{

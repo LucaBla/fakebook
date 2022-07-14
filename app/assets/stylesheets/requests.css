@@ -4,13 +4,15 @@ h2 {
 
 .requests{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+  justify-content: center;
   margin: 20px 50px;
 }
 
 .request{
   position: relative;
-  width: 170px;
+  width: 160px;
 }
 
 .request:hover > .buttons{

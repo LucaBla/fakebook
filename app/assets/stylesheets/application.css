@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -41,7 +42,7 @@ nav a{
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 .logo{
@@ -242,7 +243,29 @@ nav .dropdown{
 
 .friends img{
   border-radius: 30%;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
+}
+
+.your-friends{
+  width: 15vw;
+}
+
+.friendlist{
+  height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+}
+
+.friendlist p a span{
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friendlist p:not(:first-child){
+  margin-top: 25px;
 }
