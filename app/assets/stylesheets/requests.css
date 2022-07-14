@@ -51,23 +51,75 @@ h2 {
   cursor: pointer;
 }
 
-.request .buttons form:first-child button{
+.acc-btn-wrapper form button{
   background-color: rgb(2, 211, 2);
 }
 
-.request .buttons form:first-child button:hover{
+.acc-btn-wrapper form button:hover{
   background-color: rgb(3, 250, 3);
 }
 
-.request .buttons form:nth-child(2) button{
+.dec-btn-wrapper form button{
   background-color: rgb(211, 2, 2);
 }
 
-.request .buttons form:nth-child(2) button:hover{
+.dec-btn-wrapper form button:hover{
   background-color: rgb(250, 3, 3);
 }
 
 .request i.fa-times {
   width: 16px;
   height: 16px;
+}
+
+.declined-accepted{
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  bottom: 0;
+  left: 0;
+  border-radius: 40px;
+  background-color: transparent;
+  z-index: 1000;
+  opacity: 80%;
+}
+
+.declined-accepted::before{
+  display: none;
+  height: inherit;
+  content: '\f00c';
+  color: white;
+  font: normal normal normal 100px/1 FontAwesome;
+  align-items: center;
+  justify-content: center;
+}
+
+.declined-accepted::after{
+  display: none;
+  height: inherit;
+  content: '\f00d';
+  color: white;
+  font: normal normal normal 100px/1 FontAwesome;
+  align-items: center;
+  justify-content: center;
+}
+
+.declined{
+  animation: decline-bg 0.6s forwards;
+}
+
+.declined::after{
+  display: flex;
+  opacity: 0%;
+  animation: show-x 0.25s linear 0.3s forwards;
+}
+
+.accepted{
+  animation: accept-bg 0.6s forwards;
+}
+
+.accepted::before{
+  display: flex;
+  opacity: 0%;
+  animation: show-y 0.25s linear 0.3s forwards;
 }

@@ -1,0 +1,64 @@
+@keyframes decline-bg {
+  0%{
+   background-color: rgb(211, 2, 2);
+   height: 0px;
+   border-radius: 0px;
+  }
+  90%{
+    border-radius: 0px;
+  }
+  100%{
+    height: inherit;
+    background-color: rgb(211, 2, 2);
+  }
+}
+
+@keyframes accept-bg {
+  0%{
+   background-color: rgb(2, 211, 2);
+   height: 0px;
+   border-radius: 0px;
+  }
+  90%{
+    border-radius: 0px;
+  }
+  100%{
+    height: inherit;
+    background-color: rgb(2, 211, 2);
+  }
+}
+
+@keyframes hide{
+  0%{
+   opacity: 100%;
+    display: inline;
+  }
+  100%{
+    opacity: 0%;
+    display: none;
+  }
+}
+
+@keyframes show-x{
+  0%{
+   opacity: 80%;
+   transform: translateX(120px);
+   display: flex;
+  }
+  100%{
+    opacity: 80%;
+    display: flex;
+  }
+}
+
+@keyframes show-y{
+  0%{
+   opacity: 80%;
+   transform: translateX(-120px);
+   display: flex;
+  }
+  100%{
+    opacity: 80%;
+    display: flex;
+  }
+}

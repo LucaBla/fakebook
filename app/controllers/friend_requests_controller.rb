@@ -24,8 +24,9 @@ class FriendRequestsController < ApplicationController
 
     respond_to do |format|
       if @friendship.save
-        format.html { redirect_to friend_requests_path, notice: "FriendRequest was successfully accepted." }
+        format.html { }
         format.json { render :show, status: :created, location: @friendship }
+        @friend_request.destroy
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @friendship.errors, status: :unprocessable_entity }
@@ -36,11 +37,6 @@ class FriendRequestsController < ApplicationController
   def destroy
     @friend_request = FriendRequest.find(params[:id])
     @friend_request.destroy
-
-    respond_to do |format|
-      format.html { redirect_to friend_requests_url, notice: "friendrequest was successfully declined." }
-      format.json { head :no_content }
-    end
   end
 
   private

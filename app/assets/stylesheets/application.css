@@ -32,6 +32,10 @@ nav{
   z-index: 10000000;
 }
 
+em{
+  font-style: normal;
+}
+
 nav a{
   text-decoration: none;
 }
@@ -106,7 +110,7 @@ nav .user{
 nav img{
   width: 48px;
   height: 48px;
-  border-radius: 40%;
+  border-radius: 30%;
 }
 
 nav img:hover{
@@ -237,7 +241,7 @@ nav .dropdown{
 }
 
 .friends img{
-  border-radius: 40%;
+  border-radius: 30%;
   width: 32px;
   height: 32px;
   margin-right: 10px;
