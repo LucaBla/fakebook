@@ -1,5 +1,7 @@
 <div id="<%= dom_id comment %>" class="comment-wrapper">
-  <div class="comment">
+  <%= tag.div id: dom_id(comment), class: 'comment', data: {
+              animate_in: 'comment-in',
+              animate_out: 'comment-out' } do%>
     <div class="comment-options" data-controller='comment'>
       <i class="fas fa-ellipsis-h" data-action='click->comment#show'></i>
       <div class="dropdown hidden comment-dropdown" data-comment-target='dropDown'>
@@ -20,7 +22,7 @@
     <div class="comment-user">
       <%= comment.user.username %>
     </div>
-  </div>
+  <%end%>
   <div class="comment-corner">
   </div>
   <%= link_to user_path(comment.user)  do %>

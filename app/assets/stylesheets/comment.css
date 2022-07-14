@@ -165,3 +165,13 @@
 .placeholder{
   height: 300px;
 }
+
+.comment-in{
+  animation: slide-in 0.4s ease-in,
+             fade-in 0.4s ease-in;
+}
+
+.comment-out{
+  animation: slide-out 0.4s ease-out,
+             fade-out 0.4s ease-out;
+}
