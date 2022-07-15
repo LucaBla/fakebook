@@ -1,24 +1,5 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.fields_for :postable do |subform| %>
-      <%= subform.label :content %>
-      <%= subform.text_field :content %>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<% if params[:type] == 'img'%>
+  <%= render 'img_post_form', post: @post%>
+<% else %>
+  <%= render 'text_post_form', post: @post%>
+<%end%>

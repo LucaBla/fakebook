@@ -53,6 +53,20 @@
   margin: 15px 0px;
 }
 
+.post-img-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 10px;
+  
+}
+
+.posted-img{
+  max-width: 100%;
+  border-radius: 10px;
+}
+
 .post-btns{
   display: flex;
   font-size: 25px;

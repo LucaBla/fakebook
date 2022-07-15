@@ -15,7 +15,11 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @postable = PostText.new
+    if params[:type] == 'img'
+      @postable = PostImage.new
+    else
+      @postable = PostText.new
+    end
     @post = current_user.posts.build(postable: @postable)
   end
 
@@ -25,7 +29,11 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @postable = PostText.new(postable_params[:postable_attributes])
+    if type_param[:type] == 'img'
+      @postable = PostImage.new(postable_params[:postable_attributes])
+    else 
+      @postable = PostText.new(postable_params[:postable_attributes])
+    end
     @post = current_user.posts.build(post_params)
     @post.postable = @postable
     respond_to do |format|
@@ -75,5 +83,9 @@ class PostsController < ApplicationController
 
     def postable_params
       params.require(:post).permit(postable_attributes:[:content])
+    end
+
+    def type_param
+      params.require(:post).permit(:type)
     end
 end

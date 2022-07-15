@@ -32,7 +32,13 @@
       <%end%>
     </div>
     <div class="post-content">
-      <%= post.postable.content %>
+      <% if post.postable.class == PostImage %>
+        <div class="post-img-wrapper">
+          <%= image_tag  post.postable.content, class: 'posted-img' %>
+        </div>
+      <%else%>
+        <%= post.postable.content %>
+      <%end%>
     </div>
     <div class="post-btns">
       <div class="likes">

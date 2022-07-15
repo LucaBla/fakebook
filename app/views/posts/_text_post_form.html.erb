@@ -1,0 +1,30 @@
+<turbo-frame id='nested-form' data-post-target='frame' target='_top'>
+  <%= form_with(model: post) do |form| %>
+    <% if post.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div data-controller='post'>
+    <%= link_to 'img', new_post_path(type: 'img'), data: {turbo_target: 'nested-form'} %>
+    <input type="checkbox" name='post-type' id='post-type' value='image' 
+          data-action='click->post#change_nested_form'>
+          <%= form.hidden_field :type, value: 'text' %>
+    <div>
+      <%= form.fields_for :postable do |subform| %>
+        <%= subform.label :content %>
+        <%= subform.text_field :content %>
+      <% end %>
+    </div>
+  </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</turbo-frame>
