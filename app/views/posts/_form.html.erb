@@ -12,8 +12,10 @@
   <% end %>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.fields_for :postable do |subform| %>
+      <%= subform.label :content %>
+      <%= subform.text_field :content %>
+    <% end %>
   </div>
 
   <div>

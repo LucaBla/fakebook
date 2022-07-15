@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   has_many :likes
 
   belongs_to :postable, polymorphic: true
+accepts_nested_attributes_for :postable
 end
