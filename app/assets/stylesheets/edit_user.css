@@ -1,0 +1,109 @@
+.edit-profile-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-wrapper{
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper form{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  width: 33vw;
+  min-width: 256px;
+}
+
+.form-wrapper label{
+  font-weight: bold;
+}
+
+.img-field{
+  align-self: center;
+}
+
+.form-wrapper img{
+  width: 256px;
+  height: 256px;
+  border-radius: 40px;
+}
+
+input[type="file"]{
+  width: 0px;
+}
+
+.image-label{
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 40px;
+  right: 11vw;
+  font-size: 20px;
+}
+
+.image-label:hover{
+  cursor: pointer;
+}
+
+input[type="text"]{
+  width: 95%;
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.update-btn{
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.update-btn:hover{
+  cursor: pointer;
+  background-color: #4f7edb;
+}
+
+.form-wrapper .actions{
+  align-self: center;
+}
+
+.form-wrapper .cancel-acc-form{
+  margin-top: 0px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.delete-acc-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 140px;
+  align-self: center;
+}
+
+.delete-acc-btn:hover{
+  background-color: rgb(255, 71, 71);
+}

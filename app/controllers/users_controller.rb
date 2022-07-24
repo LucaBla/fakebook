@@ -17,9 +17,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = current_user
+  end
+
   def update
+    @user = current_user
     respond_to do |format|
-      if @user.update(post_params)
+      if @user.update(user_params)
         format.html { redirect_to root_path, notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
