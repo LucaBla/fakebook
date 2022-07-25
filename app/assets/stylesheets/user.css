@@ -155,6 +155,7 @@
 .user-profile-friends-list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 160px) );
+  grid-auto-rows: min-content;
   gap: 10px;
   width: 70%;
   height: 80vh;
