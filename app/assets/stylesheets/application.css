@@ -71,6 +71,25 @@ nav a{
   gap: 20px;
 }
 
+.log-in-btn{
+  background-color: #EBEBEB;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.sign-in-btn{
+  background-color: #B25542;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+}
+
 nav .nav-btns a .fa-envelope{
   background-color: #5555;
   color: white;
