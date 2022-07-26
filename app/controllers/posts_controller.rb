@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   def create
     if type_param[:type] == 'img'
       @postable = PostImage.new(postable_params[:postable_attributes])
-    else 
+    else
       @postable = PostText.new(postable_params[:postable_attributes])
     end
     @post = current_user.posts.build(post_params)
@@ -49,6 +49,8 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @postable = @post.postable
+    @postable.update(postable_params[:postable_attributes])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
@@ -82,7 +84,7 @@ class PostsController < ApplicationController
     end
 
     def postable_params
-      params.require(:post).permit(postable_attributes:[:content])
+      params.require(:post).permit(postable_attributes: [:content])
     end
 
     def type_param
