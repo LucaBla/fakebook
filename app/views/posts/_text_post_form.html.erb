@@ -12,19 +12,25 @@
       </div>
     <% end %>
     <div data-controller='post'>
-    <%= link_to 'img', new_post_path(type: 'img'), data: {turbo_target: 'nested-form'} %>
-    <input type="checkbox" name='post-type' id='post-type' value='image' 
-          data-action='click->post#change_nested_form'>
-          <%= form.hidden_field :type, value: 'text' %>
+    <%= form.hidden_field :type, value: 'text' %>
     <div>
       <%= form.fields_for :postable do |subform| %>
-        <%= subform.label :content %>
-        <%= subform.text_field :content %>
+        <%= subform.text_area :content, placeholder:'Start typing...',
+                              oninput:'this.style.height =
+                              "";this.style.height = this.scrollHeight + "px"' %>
       <% end %>
+      <% if current_page?(action: 'new') %>
+        <div class="new-post-links">
+          <i class="fas fa-font text-link forbidden"></i>
+          <%= link_to new_post_path(type: 'img'), class:'image-link', data: {turbo_target: 'nested-form', turbo_frame:'_self'} do %>
+            <i class="fas fa-image"></i>
+          <% end %>
+        </div>
+      <%end%>
     </div>
   </div>
-    <div>
-      <%= form.submit %>
+    <div class='actions'>
+      <%= form.button 'Post', class:'forget-pw-btn' %>
     </div>
   <% end %>
 </turbo-frame>

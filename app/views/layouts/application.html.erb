@@ -11,7 +11,18 @@
     <script src="https://kit.fontawesome.com/5ed27ce724.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body data-controller='application'>
+    <%if user_signed_in?%>
+      <div class="new-post-modal-bg hidden" data-application-target='modal'>
+        <div class="new-post-modal">
+          <div class="close-btn" data-action='click->application#showModal'>
+            <i class="fas fa-times"></i>
+          </div>
+          <turbo-frame id='new-post-modal' src='posts/new'>
+          </turbo-frame>  
+        </div>
+      </div>
+    <%end%>
     <nav>
       <%= link_to root_path do %>
         <div class="logo">
@@ -19,13 +30,13 @@
         </div>
       <% end %>
       <% if user_signed_in? %>
-        <div class="nav-btns" data-controller='application'>
+        <div class="nav-btns">
           <%= link_to friend_requests_path do %>
             <i class="fas fa-envelope"></i>
           <% end %>
-          <%= link_to new_post_path do%>
-            <i class="fas fa-plus-circle"></i>
-          <% end %>
+            <div data-action='click->application#showModal'>
+              <i class="fas fa-plus"></i>
+            </div>
           <div class="user">
             <%= image_tag current_user.image, data: {action:'click->application#show'} %>
             <div class="dropdown hidden" data-application-target='dropDown'>

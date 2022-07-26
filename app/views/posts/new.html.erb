@@ -1,9 +1,5 @@
-<h1>New post</h1>
+<turbo-frame id='new-post-modal'>
+  <h1 class='edit-profile-header modal-header'>Create a post</h1>
 
-<%= render "form", post: @post, postable: @postable %>
-
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
-</div>
+  <%= render "form", post: @post, postable: @postable %>
+</turbo-frame>

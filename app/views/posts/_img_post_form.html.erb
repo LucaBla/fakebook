@@ -11,10 +11,7 @@
         </ul>
       </div>
     <% end %>
-    <div data-controller='post'>
-    <%= link_to 'text', new_post_path(type: 'text'), data: {turbo_target: 'nested-form'} %>
-    <input type="checkbox" name='post-type' id='post-type' value='image' 
-          data-action='click->post#change_nested_form'>
+    <div data-controller='post' class='img-form'>
     <%= form.hidden_field :type, value: 'img' %>
     <div>
       <%= form.fields_for :postable do |subform| %>
@@ -22,14 +19,18 @@
           <%= image_tag  @user.image, style: 'width: 200px' %>
         <% end %>
 
-        <%= subform.label :content %><br />
-        <%= subform.file_field :content %>
+        <%= subform.file_field :content, class:'log-in-btn' %>
       <% end %>
+      <div class="new-post-links">
+        <%= link_to new_post_path(type: 'text'), data: {turbo_target: 'nested-form', turbo_frame:'_self'} do %>
+          <i class="fas fa-font text-link"></i>
+        <% end %>
+        <i class="fas fa-image image-link forbidden" ></i>
+      </div>
     </div>
   </div>
-    <div>
-      <%= form.submit %>
+    <div class='actions'>
+      <%= form.submit 'Post', class:'forget-pw-btn' %>
     </div>
   <% end %>
-  A
 </turbo-frame>

@@ -82,7 +82,7 @@ input[type="text"], input[type="email"], input[type="password"]{
   background-color: #4f7edb;
 }
 
-.form-wrapper .actions{
+.actions{
   align-self: center;
 }
 

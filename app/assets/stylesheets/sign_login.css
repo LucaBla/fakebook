@@ -83,3 +83,36 @@ form input[type="checkbox"]{
   border-radius: 10px;
   padding: 10px 20px;
 }
+
+.forget-pw-btn:hover{
+  cursor: pointer;
+  background-color: #4c78cf;
+}
+
+.new-post-modal textarea{
+  width: 98%;
+  max-width: 98%;
+  min-width: 98%;
+  height: 15vh;
+  min-height: 15vh;
+  max-height: 50vh;
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px 10px;
+}
+
+.post textarea{
+  width: 98%;
+  max-width: 98%;
+  min-width: 98%;
+  height: 15vh;
+  min-height: 15vh;
+  max-height: 50vh;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px 10px;
+}

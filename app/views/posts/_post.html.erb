@@ -16,12 +16,14 @@
           <i class="fas fa-ellipsis-h" data-action='click->post#show'></i>
           <div class="dropdown hidden" data-post-target='dropDown'>
             <div class="dropdown-items">
-              <%= link_to edit_post_path(post), data: {'turbo-frame': '_top'} do%>
-                <div>
-                  <i class="fas fa-pen"></i>
-                  <em>Edit</em>
-                </div>
-              <% end %>
+              <% if post.postable_type != 'PostImage'%>
+                <%= link_to edit_post_path(post), data: {'turbo-frame': 'edit-post'} do%>
+                  <div>
+                    <i class="fas fa-pen"></i>
+                    <em>Edit</em>
+                  </div>
+                <% end %>
+              <%end%>
               <%= button_to post, method: :delete, data: {'turbo-frame': '_top'} do %>
                 <i class="fas fa-trash"></i>
                 <em>Delete</em>
@@ -37,7 +39,9 @@
           <%= image_tag  post.postable.content, class: 'posted-img' %>
         </div>
       <%else%>
-        <%= post.postable.content %>
+        <%= turbo_frame_tag 'edit-post' do%>
+          <%= post.postable.content %>
+        <%end%>
       <%end%>
     </div>
     <div class="post-btns">

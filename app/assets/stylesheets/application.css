@@ -37,12 +37,81 @@ em{
   font-style: normal;
 }
 
+.new-post-modal-bg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000000000000;
+}
+
+.new-post-modal{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  padding: 20px 50px;
+  padding-top: 0px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  width: 33vw;
+  min-width: 256px;
+}
+
+.new-post-modal form{
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post-modal .img-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-post-modal form input[type='file']{
+  width: auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.new-post-modal .close-btn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.new-post-modal .close-btn:hover{
+  cursor: pointer;
+}
+
+.new-post-modal .text-link{
+  color: black;
+  font-size: 26px;
+}
+
+.new-post-modal .image-link{
+  color: black;
+  font-size: 26px;
+}
+
 nav a{
   text-decoration: none;
 }
 
 .hidden{
   display: none !important;
+}
+
+.forbidden{
+  color: rgb(180, 180, 180) !important;
+}
+
+.forbidden:hover{
+  cursor: not-allowed;
 }
 
 .logo{
@@ -119,6 +188,23 @@ nav .nav-btns a .fa-envelope{
   color: #5555;
   background-color: white;
   border-radius: 50px;
+}
+
+nav .nav-btns .fa-plus{
+  font-size: 23px;
+  background-color: #5555;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-plus:hover{
+  cursor: pointer;
 }
 
 nav .user{
