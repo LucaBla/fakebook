@@ -54,7 +54,7 @@
           <% if request.fullpath.include?('/sign_up') %>
             <%= link_to "Log in", new_session_path(resource_name), class: 'log-in-btn' %>
           <%end%>
-          <% if request.fullpath.include?('/sign_in') %>
+          <% if request.fullpath.include?('/sign_in') || request.fullpath.include?('/password/new') %>
             <%= link_to "Sign in", new_user_registration_path, class: 'sign-in-btn' %>
           <%end%>
         </div>

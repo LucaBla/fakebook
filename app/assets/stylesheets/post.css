@@ -51,6 +51,7 @@
 
 .post-content{
   margin: 15px 0px;
+  word-break: break-all;
 }
 
 .post-img-wrapper{
