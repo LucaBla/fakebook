@@ -231,6 +231,38 @@ nav .dropdown{
   width: 120px;
 }
 
+.notice{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  width: fit-content;
+  z-index: 100;
+  animation: 0.5s  1.5s forwards ease-out hide;
+}
+
+.alert{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  width: fit-content;
+  z-index: 100;
+  animation: 0.5s  1.5s forwards ease-out hide;
+}
+
 .dropdown{
    z-index: 100000000000000000000000000000000;
 }

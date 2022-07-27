@@ -71,9 +71,11 @@
         </div>
       <% end %>
     </nav>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%if notice.present?%>
+      <p class="notice"><%= notice %></p>
+    <%elsif alert.present?%>
+      <p class="alert"><%= alert %></p>
+    <%end%>
     <% if request.fullpath != '/' && request.fullpath != '/posts' && !request.fullpath.start_with?('/posts/') %>
       <div class="yielded-content">
         <%= yield %>
