@@ -17,6 +17,17 @@ document.addEventListener('turbo:before-stream-render', function(event) {
     })
   }
   else if(event.target.firstElementChild instanceof HTMLTemplateElement){
-    event.target.templateElement.content.firstElementChild.classList.add('comment-in')
+    scrollToCommentAndCommentIn(event)
   }
 })
+
+async function scrollToCommentAndCommentIn(event){
+  document.getElementsByClassName('post-wrapper')[0].scrollIntoView({block: 'start'})
+  event.target.templateElement.content.firstElementChild.classList.add('comment-in')
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//post-wrapper

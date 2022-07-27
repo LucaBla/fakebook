@@ -1,13 +1,13 @@
 class User < ApplicationRecord
-  has_many :posts
-  has_many :comments
-  has_many :likes
-  has_one :bio
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_one :bio, dependent: :destroy
 
   has_one_attached :image, dependent: :destroy
 
-  has_many :sended_requests, class_name: 'FriendRequest', foreign_key: 'sender_id', inverse_of: :sender
-  has_many :received_requests, class_name: 'FriendRequest', foreign_key: 'receiver_id', inverse_of: :receiver
+  has_many :sended_requests, class_name: 'FriendRequest', foreign_key: 'sender_id', inverse_of: :sender, dependent: :destroy
+  has_many :received_requests, class_name: 'FriendRequest', foreign_key: 'receiver_id', inverse_of: :receiver, dependent: :destroy
 
   has_and_belongs_to_many :friends,
                           class_name: 'User',

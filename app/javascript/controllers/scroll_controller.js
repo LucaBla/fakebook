@@ -4,6 +4,6 @@ export default class extends Controller {
   static targets = [ 'newPost' ]
 
   scroll() {
-    this.newPostTarget.scrollIntoView(true)
+    //this.newPostTarget.scrollIntoView({block: 'start', behavior: 'smooth'})
   }
 }

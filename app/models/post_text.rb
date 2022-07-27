@@ -1,3 +1,3 @@
 class PostText < ApplicationRecord
-  has_one :post, as: :postable
+  has_one :post, as: :postable, dependent: :destroy
 end
