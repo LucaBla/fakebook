@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    disallow_illegal_move
   end
 
   # POST /posts or /posts.json
@@ -49,6 +50,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    disallow_illegal_move
     @postable = @post.postable
     @postable.update(postable_params[:postable_attributes])
     respond_to do |format|
@@ -73,21 +75,28 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:content, :postable_attributes)
+  def disallow_illegal_move
+    if current_user != @post.user
+      redirect_to(root_path, notice: "Not allowed")
+      return 
     end
+  end
 
-    def postable_params
-      params.require(:post).permit(postable_attributes: [:content])
-    end
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:content, :postable_attributes)
+  end
 
-    def type_param
-      params.require(:post).permit(:type)
-    end
+  def postable_params
+    params.require(:post).permit(postable_attributes: [:content])
+  end
+
+  def type_param
+    params.require(:post).permit(:type)
+  end
 end

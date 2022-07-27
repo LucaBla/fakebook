@@ -1,7 +1,9 @@
 <div class="banner">
-  <%= button_to action: 'create', controller: 'friend_requests', receiver_id: @user.id do%>
-    Send Friend Request
-  <% end %>
+  <% if current_user != @user %>
+    <%= button_to action: 'create', controller: 'friend_requests', receiver_id: @user.id do%>
+      Send Friend Request
+    <% end %>
+  <%end%>
 </div>
 
 <div class="user-name-and-pic">
@@ -15,7 +17,7 @@
 
 <div class="user-profile-content">
     <h2 class="bio-header">Bio</h2>
-    <h2>Posts</h2>
+    <h2 class='posts-header'>Posts</h2>
     <h2 class="friends-header">Friends</h2>
   <%= turbo_frame_tag 'bio' do%>
     <div class="bio">

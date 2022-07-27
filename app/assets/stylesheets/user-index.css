@@ -37,3 +37,7 @@
 .users a{
   color: black;
 }
+
+.search-form form{
+  display: flex;
+}

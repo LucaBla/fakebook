@@ -29,7 +29,7 @@
 .user-name-and-pic{
   display: flex;
   position: absolute;
-  top: 200px;
+  top: 190px;
   left: 80px;
   align-items: center;
   color: black;
@@ -60,9 +60,13 @@
 }
 
 .bio-header{
-  margin-left: 4vw;
+  margin-left: 3.5vw;
   position: sticky;
   top: 90px;
+}
+
+.posts-header{
+  margin-left: 0px;
 }
 
 .friends-header{
