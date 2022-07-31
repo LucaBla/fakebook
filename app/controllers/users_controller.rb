@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         format.html { redirect_to root_path, notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_to root_path, status: :unprocessable_entity ,notice: "Something went wrong."}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
