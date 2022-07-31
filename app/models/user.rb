@@ -15,6 +15,8 @@ class User < ApplicationRecord
                           foreign_key: 'user_id',
                           association_foreign_key: 'friend_id'
 
+  validates :image, blob: { content_type: :image }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
