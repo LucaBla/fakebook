@@ -7,7 +7,7 @@ class FriendRequestsController < ApplicationController
     @friend_request = current_user.sended_requests.build(fr_params)
     respond_to do |format|
       if @friend_request.save
-        format.html { redirect_back fallback_location: root_path, notice: "FriendRequest was successfully send." }
+        format.html { redirect_back fallback_location: root_path}
         format.json { render :show, status: :created, location: @friend_request }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class FriendRequestsController < ApplicationController
     @friend_request = FriendRequest.find(params[:id])
     respond_to do |format|
       if @friend_request.destroy
-        format.html { redirect_back fallback_location: root_path, notice: "FriendRequest was successfully removed." }
+        format.html { redirect_back fallback_location: root_path}
         format.json { head :no_content }
       end
     end
