@@ -28,6 +28,10 @@
   color: rgb(151, 151, 151);
 }
 
+.banner .remove-friend-btn button{
+  background-color: #B25542;
+}
+
 .banner button:hover{
   cursor: pointer;
 }

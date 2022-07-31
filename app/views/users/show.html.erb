@@ -1,15 +1,22 @@
 <div class="banner">
   <turbo-frame id='fr_btn'>
-    <% if current_user != @user && @user.received_requests.where(sender: current_user).empty? %>
+    <% if current_user != @user && @user.received_requests.where(sender: current_user).empty? &&
+          !current_user.friends.include?(@user) %>
       <%= button_to action: 'create', controller: 'friend_requests', receiver_id: @user.id do%>
         Send Friend Request
       <% end %>
-    <%elsif current_user != @user%>
+    <%elsif current_user != @user && !current_user.friends.include?(@user) %>
       <div class="withdraw-fr-btn">
         <%= button_to action: 'withdraw', controller: 'friend_requests',
                       id: @user.received_requests.where(sender: current_user).first.id do%>
           Withdraw Friend Request
         <% end %>
+      </div>
+    <%elsif current_user != @user && current_user.friends.include?(@user) %>
+      <div class="remove-friend-btn">
+      <%= button_to 'Remove Friend', {action: 'destroy', controller: 'friendships',
+                     id: Friendship.where(user_id: current_user.id, friend_id: @user.id).first},
+                     method: :delete %>
       </div>
     <%end%>
   </turbo-frame>
