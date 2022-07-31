@@ -172,6 +172,22 @@ nav .nav-btns a .fa-envelope{
   justify-content: center;
 }
 
+.fr-link{
+  position: relative;
+}
+
+.fr-count{
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  background-color: #B25542;
+  color: white;
+  border-radius: 100%;
+  padding: 2px 5px 2px 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
 .nav-btns i:not(:last-child){
   background-color: #5555;
   padding: 5px;
