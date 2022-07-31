@@ -20,6 +20,12 @@
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+  z-index: 10;
+}
+
+.banner .withdraw-fr-btn button{
+  background-color: #EBEBEB;
+  color: rgb(151, 151, 151);
 }
 
 .banner button:hover{
@@ -27,7 +33,7 @@
 }
 
 .user-name-and-pic{
-  width: 90vw;
+  max-width: 70%;
   display: flex;
   position: absolute;
   top: 190px;

@@ -34,6 +34,16 @@ class FriendRequestsController < ApplicationController
     end
   end
 
+  def withdraw
+    @friend_request = FriendRequest.find(params[:id])
+    respond_to do |format|
+      if @friend_request.destroy
+        format.html { redirect_back fallback_location: root_path, notice: "FriendRequest was successfully removed." }
+        format.json { head :no_content }
+      end
+    end
+  end
+
   def destroy
     @friend_request = FriendRequest.find(params[:id])
     @friend_request.destroy
@@ -44,4 +54,5 @@ class FriendRequestsController < ApplicationController
   def fr_params
     params.permit(:receiver_id, :id)
   end
+
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     member do
       post 'accept'
       post 'destroy'
+      post 'withdraw'
     end
   end
   resources :likes
