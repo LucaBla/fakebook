@@ -27,6 +27,7 @@
 }
 
 .user-name-and-pic{
+  width: 90vw;
   display: flex;
   position: absolute;
   top: 190px;
@@ -34,6 +35,13 @@
   align-items: center;
   color: black;
   
+}
+
+.user-name-and-pic .username-header{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-name-and-pic i{
