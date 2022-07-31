@@ -54,6 +54,11 @@
       <% @user.posts.order(created_at: :desc).each do |post|%>
         <%= render post %>
       <%end%>
+      <% if @user.posts.empty? %>
+        <div class="empty-message">
+          Nothing to see :(
+        </div>
+      <%end%>
     </div>
   </div>
 
@@ -63,6 +68,11 @@
         <%= link_to user_path(friend) do%>
          <%= render friend %>
         <%end%>
+      <%end%>
+      <% if @user.friends.empty? %>
+        <div class="empty-message">
+          Nothing to see :(
+        </div>
       <%end%>
     </div>
   </div>

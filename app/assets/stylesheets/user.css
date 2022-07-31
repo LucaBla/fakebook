@@ -184,10 +184,16 @@
   overflow-y: scroll;
   position: sticky;
   top: 120px;
+  margin-bottom: 50px;
 }
 
 .user-profile-friends-list a{
   height: fit-content;
   text-decoration: none;
   color: black;
+}
+
+.empty-message{
+  margin-top: 50px;
+  text-align: center;
 }
