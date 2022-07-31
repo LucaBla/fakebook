@@ -22,7 +22,7 @@ document.addEventListener('turbo:before-stream-render', function(event) {
 })
 
 async function scrollToCommentAndCommentIn(event){
-  document.getElementsByClassName('post-wrapper')[0].scrollIntoView({block: 'start'})
+  document.getElementsByClassName('post-btns')[0].scrollIntoView({block: 'start'})
   event.target.templateElement.content.firstElementChild.classList.add('comment-in')
 }
 
