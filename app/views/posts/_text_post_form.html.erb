@@ -22,7 +22,7 @@
       <% if current_page?(action: 'new') %>
         <div class="new-post-links">
           <i class="fas fa-font text-link forbidden"></i>
-          <%= link_to new_post_path(type: 'img'), class:'image-link', data: {turbo_target: 'nested-form', turbo_frame:'_self'} do %>
+          <%= link_to new_post_path(type: 'img'), id:'img-link', class:'image-link', data: {turbo_target: 'nested-form', turbo_frame:'_self'} do %>
             <i class="fas fa-image"></i>
           <% end %>
         </div>

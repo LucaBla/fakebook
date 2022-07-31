@@ -74,6 +74,7 @@ em{
 
 .new-post-modal form input[type='file']{
   width: auto;
+  max-width: 100%;
   align-self: center;
   justify-self: center;
 }

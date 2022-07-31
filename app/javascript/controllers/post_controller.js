@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ 'dropDown', 'frame' ]
+  static targets = [ 'dropDown', 'frame', 'img' ]
 
   show() {
     this.dropDownTarget.classList.toggle('hidden')
@@ -13,4 +13,11 @@ export default class extends Controller {
       console.log('a')
     }
   }
+
+  imagePreview(){
+    console.log(this)
+    var src = URL.createObjectURL(event.target.files[0])
+    this.imgTarget.src = src
+  }
+
 }

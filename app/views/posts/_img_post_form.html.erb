@@ -13,13 +13,14 @@
     <% end %>
     <div data-controller='post' class='img-form'>
     <%= form.hidden_field :type, value: 'img' %>
-    <div>
+    <div class='img-form-div'>
       <%= form.fields_for :postable do |subform| %>
         <% if @postable.content.attached? %>
-          <%= image_tag  @user.image, style: 'width: 200px' %>
+          <%= image_tag  @user.image, style: 'width: 200px', id:'image' %>
+        <%else%>
+          <img id="preview-image" data-post-target='img' />
         <% end %>
-
-        <%= subform.file_field :content, class:'log-in-btn' %>
+        <%= subform.file_field :content, class:'log-in-btn', id:'files', data: {action:'change->post#imagePreview'} %>
       <% end %>
       <div class="new-post-links">
         <%= link_to new_post_path(type: 'text'), data: {turbo_target: 'nested-form', turbo_frame:'_self'} do %>
