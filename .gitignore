@@ -35,4 +35,5 @@
 # Ignore Spring files.
 /spring/*.pid
 
+# ignore .env
 .env
