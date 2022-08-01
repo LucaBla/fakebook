@@ -24,8 +24,12 @@ E-Mail: test@test.com<br/>
 Password: 123456
 
 ## Screenshots
-<img src=''>
-<img src=''>
-<img src=''>
-<img src=''>
-<img src=''>
+<img src='preview_imgs/fakebook1.png'>
+<br/>
+<img src='preview_imgs/fakebook2.png'>
+<br/>
+<img src='preview_imgs/fakebook3.png'>
+<br/>
+<img src='preview_imgs/fakebook4.png'>
+<br/>
+<img src='preview_imgs/fakebook5.png'>
