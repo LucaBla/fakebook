@@ -37,7 +37,7 @@
 }
 
 .user-name-and-pic{
-  max-width: 70%;
+  max-width: fit-content;
   display: flex;
   position: absolute;
   top: 190px;
