@@ -36,7 +36,11 @@
     <div class="post-content">
       <% if post.postable.class == PostImage %>
         <div class="post-img-wrapper">
-          <%= image_tag  post.postable.content, class: 'posted-img' %>
+          <% if post.postable.content.attached? %>
+            <%= image_tag  post.postable.content, class: 'posted-img' %>
+          <%else%>
+            <p style='color:white'>:(</p>
+          <%end%>
         </div>
       <%else%>
         <%= turbo_frame_tag 'edit-post' do%>
