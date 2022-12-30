@@ -111,7 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_24_230228) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "bio"
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
