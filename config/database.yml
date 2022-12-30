@@ -85,3 +85,4 @@ production:
   database: fakebook_production
   username: fakebook
   password: <%= ENV["FAKEBOOK_DATABASE_PASSWORD"] %>
+  schema_search_path: fakebook, public
